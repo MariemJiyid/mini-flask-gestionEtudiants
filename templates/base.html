@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>{% block title %}Mini Projet Flask{% endblock %}</title>
+
+    <style>
+    body {
+        font-family: 'Poppins', Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #ffe6f2, #f7f0ff);
+        color: #444;
+    }
+
+    .container {
+        max-width: 700px;
+        background: white;
+        padding: 25px;
+        margin: 50px auto;
+        border-radius: 14px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        border-top: 4px solid #ff80b3;
+    }
+
+    h1 {
+        text-align: center;
+        color: #d63384;
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+
+    a {
+        text-decoration: none;
+        color: #d63384;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    a:hover {
+        color: #b0266b;
+        text-decoration: underline;
+    }
+
+    /* Formulaire */
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    label {
+        font-weight: 600;
+        color: #b0266b;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"] {
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #d1b3c4;
+        outline: none;
+        transition: 0.3s;
+    }
+
+    input:focus {
+        border-color: #d63384;
+        box-shadow: 0 0 4px rgba(214, 51, 132, 0.4);
+    }
+
+    /* Bouton */
+    button {
+        padding: 12px;
+        border: none;
+        border-radius: 6px;
+        background: #d63384;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #b0266b;
+    }
+
+    /* Liste étudiants */
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+        background: #fff7fb;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        border-left: 4px solid #d63384;
+    }
+
+    li strong {
+        font-size: 18px;
+        color: #b0266b;
+    }
+
+    hr {
+        border: none;
+        height: 1px;
+        background: #ffb3d9;
+        margin: 15px 0;
+    }
+
+    /* Messages d'erreur */
+    .error {
+        background: #ffe6ea;
+        border-left: 4px solid #ff4d6a;
+        padding: 10px;
+        border-radius: 6px;
+        color: #d91b3c;
+        margin-bottom: 10px;
+    }
+    
+    .add-btn {
+    display: inline-block;
+    margin-bottom: 12px;
+    font-weight: bold;
+    color: #d63384;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.add-btn:hover {
+    color: #a12263;
+}
+
+/* Tableau */
+.student-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.student-table thead {
+    background: #ffd6e8;
+    color: #b0266b;
+    font-weight: bold;
+}
+
+.student-table th, .student-table td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid #ffe3f0;
+}
+
+/* Dernière ligne sans bord */
+.student-table tr:last-child td {
+    border-bottom: none;
+}
+
+.delete-btn {
+    color: white;
+    background: #e63971;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.delete-btn:hover {
+    background: #c52458;
+}
+</style>
+</head>
+
+<body>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

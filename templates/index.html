@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Liste des étudiants{% endblock %}
+
+{% block content %}
+<h1>Liste des étudiants</h1>
+
+<a class="add-btn" href="{{ url_for('add_student') }}">➕ Ajouter un étudiant</a>
+<hr>
+
+{% if students %}
+<table class="student-table">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Âge</th>
+            <th>Filière</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for student in students %}
+        <tr>
+            <td>{{ student.nom }}</td>
+            <td>{{ student.email }}</td>
+            <td>{{ student.age }} ans</td>
+            <td>{{ student.filiere }}</td>
+            <td>
+                <a class="delete-btn"
+                   href="{{ url_for('delete_student', id=student.id) }}"
+                   onclick="return confirm('Supprimer cet étudiant ?');">
+                   🗑 Supprimer
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>Aucun étudiant pour le moment.</p>
+{% endif %}
+{% endblock %}
